@@ -57,7 +57,7 @@ exports.login = async (req,res) =>{
             messageLogin: 'Debes completar los campos'
         })
     }else{ 
-        pool.query('SELECT * FROM usuario WHERE email = ?', [email, password], async (error,results) =>{
+        pool.query('SELECT * FROM usuario WHERE email = ?', [email], async (error,results) =>{
            
             if(results.length > 0){ 
                 
