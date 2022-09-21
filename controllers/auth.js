@@ -67,7 +67,7 @@ exports.login = async (req,res) =>{
                     return res.render('login',{
                     layout:'main',
                     messageLogin: 'Los datos ingresados no coinciden, vuelve a intentarlo.'
-                })
+                });
                 }else{
                     const id = results[0].id
                     const token = jwt.sign({id:id},process.env.JWT_SECRET,{
@@ -81,6 +81,7 @@ exports.login = async (req,res) =>{
                     res.cookie('jwt',token, cookieOptions)
                     res.redirect('/')
                 }
+                return;
             }
         })
     }     
