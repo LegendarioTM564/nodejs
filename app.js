@@ -6,12 +6,12 @@ const dotenv = require ('dotenv')
 const cookieParser = require ('cookie-parser')
 const pool = require ('./settings/dataBase')
 
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
-app.set('port', process.env.PORT|| 4000 );
-app.listen (app.get('port'), ()=>{
-    console.log('server en puerto', app.get('port'));
+app.listen (PORT, () =>{
+    console.log(`server en puerto ${PORT}`);
 })
 
 app.use(express.json())
