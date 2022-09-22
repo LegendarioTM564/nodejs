@@ -59,7 +59,7 @@ exports.login = async (req,res) =>{
     }else{ 
         pool.query('SELECT * FROM usuario WHERE email = ?', [email], async (error,results) =>{
            
-            if(results.length > 0){ 
+            if(results?.length > 0){ 
                 
                 const comparacion = await bcrypt.compare (password, results[0].password)
                 
