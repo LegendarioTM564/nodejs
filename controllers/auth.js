@@ -71,7 +71,7 @@ exports.login = async (req,res) =>{
                 });
                 }else{
                     const id = results[0].id
-                    const token = jwt.sign({id:id},process.env.JWT_SECRET,{
+                    const token = jwt.sign({id:id},"" + process.env.JWT_SECRET,{
                         expiresIn: process.env.JWT_TIME_EXP
                     })
     
