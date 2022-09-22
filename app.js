@@ -2,7 +2,7 @@ const { error } = require ('console')
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require('path')
-const dotenv = require ('dotenv')
+const dotenv = require ('dotenv').config()
 const cookieParser = require ('cookie-parser')
 const pool = require ('./settings/dataBase')
 
